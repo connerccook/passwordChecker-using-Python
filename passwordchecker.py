@@ -3,7 +3,7 @@ import hashlib #allows us to use SHA1 hashing
 import sys
 
 def request_api_data(query_char):
-    url = 'https://api.pwnedpasswords.com/range/' + query_char #the first part is the website url for the api and next part is the first 5 characters of the sha1 version of password 
+    url = 'https://api.pwnedpasswords.com/range/' + query_char #the first part is the website url for the api and next part is the first 5 characters of the sha1 version of password because k anoynomity
     res = requests.get(url)
     if res.status_code != 200: #if its not 200 then the api request failed
         raise RuntimeError(f"Error fetching: {res.status_code}, check the api and try again")
