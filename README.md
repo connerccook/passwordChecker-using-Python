@@ -14,3 +14,5 @@ python3 passwordchecker.py
 
 You can check as many passwords as you want with just one command!
 
+Using this program the website will never know what your actual password that you inputted was!
+
