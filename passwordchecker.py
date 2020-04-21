@@ -1,6 +1,6 @@
 import requests #allows access to api
 import hashlib #allows us to use SHA1 hashing
-import sys #use to get arguments
+import sys
 
 def request_api_data(query_char):
     url = 'https://api.pwnedpasswords.com/range/' + query_char #the first part is the website url for the api and next part is the first 5 characters of the sha1 version of password 
@@ -38,8 +38,10 @@ def print_response(response):
     print(response.text) #returns all the hashes that uses the first 5 characters also returns how many times it got hacked
     #this function is used for testing
 
-def main(args):
-    for password in args:
+def main():
+    print("Welcome to the Password Checker! Please enter your passwords seperated by a space!")
+    passwords = input("Passwords: ")
+    for password in passwords.split(' '):
         count = pwn_api_check(password)
         if count:
             print(f'{password} was found {count} times... change your password!')
@@ -48,4 +50,4 @@ def main(args):
     return 'done!'
 
 if __name__ == "__main__":
-    sys.exit(main(sys.argv[1:]))
+    sys.exit(main())

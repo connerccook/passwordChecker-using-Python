@@ -10,7 +10,7 @@ This is where this program comes in because this program allows you to check you
 
 To use this program:
 
-python3 passwordchecker.py password1 password2 ...
+python3 passwordchecker.py 
 
 You can check as many passwords as you want with just one command!
 
