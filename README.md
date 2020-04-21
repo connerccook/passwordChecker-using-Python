@@ -13,3 +13,4 @@ To use this program:
 python3 passwordchecker.py password1 password2 ...
 
 You can check as many passwords as you want with just one command!
+

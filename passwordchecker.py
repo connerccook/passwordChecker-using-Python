@@ -17,6 +17,17 @@ def pwn_api_check(password):
     return get_number_of_leaks(response, tail)
 
 def get_number_of_leaks(hashes, hash_to_check):
+    '''
+    The api returns the sha1passwords with the same first five characters and the number of times it was hacked in this format:
+    ASDFGGHJFKDJDJSFJKJ:10 <-- example of how it is returned
+    ASJHGHJGLKHHKHLKHKK:12
+
+    So we use the splitlines() function to seperate all the passwords and their counts and input it into a list
+    Then this list is further split by the split() function so that everytime it sees a : it creates a list of the password and the count
+    ex: [ASADSDASFJHKASJFHSKJ, 12]
+    we then loop the entire list to find the matching password and return the count
+
+    '''
     hashes = (line.split(':') for line in hashes.text.splitlines())
     for h, count in hashes:
         if h == hash_to_check:
