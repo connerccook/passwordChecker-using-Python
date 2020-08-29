@@ -1,3 +1,4 @@
+#Conner Cook 
 import requests #allows access to api
 import hashlib #allows us to use SHA1 hashing
 import sys
